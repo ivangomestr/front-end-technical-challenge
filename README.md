@@ -51,3 +51,5 @@ AIzaSyC6munUy9XhZ5Z5frB4YmnrNvatlZJBytw
 - Utilização de Pré-Processadores de CSS ([SASS](https://sass-lang.com/) ou [LESS](https://lesscss.org/))
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
+- Testes Unitários [Jest](https://jestjs.io/pt-BR/) e [Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- CSS responsivo
