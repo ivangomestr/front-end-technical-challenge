@@ -25,7 +25,7 @@ O que preparamos é um teste com um pouquinho do que você encontrará no dia-a-
 
 ### Artefatos disponibilizados
 
-- JSON com os dados da aplicação (uso obrigatório)
+- JSON com os dados da aplicação que esta em ```public/data/data.json ```| ou também pode usar o endpoint mock https://run.mocky.io/v3/8c35bbb1-eed6-4eeb-aa83-1132b5830f57 (uso obrigatório)
 - Imagens
 - Fonts
 
@@ -48,7 +48,7 @@ AIzaSyC6munUy9XhZ5Z5frB4YmnrNvatlZJBytw
 
 ### Diferenciais
 
-- Utilização de Pré-Processadores de CSS ([SASS](https://sass-lang.com/) ou [LESS](https://lesscss.org/))
+- Utilização de Pré-Processadores de CSS ([SASS](https://sass-lang.com/) , [LESS](https://lesscss.org/)) ou [styled-components](https://mui.com/pt/system/styled/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - Testes Unitários [Jest](https://jestjs.io/pt-BR/) e [Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
