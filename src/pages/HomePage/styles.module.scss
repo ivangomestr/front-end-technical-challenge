@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    height: 100vh;
+
+    .storesContainer {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        width: 46rem;
+        height: 40rem;
+        padding: 2rem;
+    }
+}
