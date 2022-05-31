@@ -24,7 +24,14 @@ export function StoreTable() {
   let totalPages = Math.ceil(stores.length / PER_PAGE);
 
   const _DATA = usePagination({
-    data: stores,
+    data: stores.filter((store) => {
+      if (search === '') {
+        return store;
+      }
+      if (store.name.toLowerCase().includes(search.toLowerCase())) {
+        return store;
+      }
+    }),
     itemsPerPage: PER_PAGE,
   });
 
