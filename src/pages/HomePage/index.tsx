@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import { BillingFilter } from '../../BillingFilter';
 import { Search } from '../../components/Search';
 import { StoreTable } from '../../components/StoreTable';
+import { Paginations } from '../../components/Pagination';
 
 export function HomePage() {
   return (
@@ -10,9 +11,12 @@ export function HomePage() {
       <div className={styles.storesContainer}>
         <Search />
         <StoreTable />
+        <Paginations />
       </div>
 
-      <BillingFilter />
+      <div className={styles.billingContainer}>
+        <BillingFilter />
+      </div>
     </div>
   );
 }
