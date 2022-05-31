@@ -25,5 +25,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-no-useless-fragment': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'import/no-unresolved': 'off',
+    'no-use-before-define': 'off',
+    'import/extensions': 'off',
   },
 };
