@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    height: 7vh;
+    align-items: center;
+    background-color: var(--blue);
+
+    h2 {
+        padding: 1.5rem;
+        color: var(--white);
+    }
+}
