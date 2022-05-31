@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import { useStores } from '../hooks/useStores';
+import usePagination from '../hooks/usePagination';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -5,16 +9,33 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Pagination, Stack } from '@mui/material';
 
 import { Search } from '../Search';
-import { useStores } from '../hooks/useStores';
 
 export function StoreTable() {
   const { stores } = useStores();
+  const [search, setSearch] = useState('');
+
+  const [page, setPage] = useState(1);
+
+  const PER_PAGE = 10;
+
+  let totalPages = Math.ceil(stores.length / PER_PAGE);
+
+  const _DATA = usePagination({
+    data: stores,
+    itemsPerPage: PER_PAGE,
+  });
+
+  const handleChange = (e: any, p: any) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
 
   return (
     <>
-      <Search />
+      <Search filter={setSearch} />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
@@ -24,7 +45,7 @@ export function StoreTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {stores.map((store) => (
+            {_DATA.currentData().map((store: any) => (
               <TableRow
                 key={store.name}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -38,6 +59,10 @@ export function StoreTable() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <Stack spacing={2}>
+        <Pagination count={totalPages} page={page} onChange={handleChange} />
+      </Stack>
     </>
   );
 }

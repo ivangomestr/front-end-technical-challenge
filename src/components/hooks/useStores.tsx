@@ -1,23 +1,26 @@
-import { useState, createContext, useContext, useEffect } from 'react';
-import { Stores, StoresContextData } from '../../interfaces/types';
-import { StoresProviderProps } from '../../interfaces/props';
+import { createContext, useContext, useState } from "react";
+import { StoresProviderProps } from "../../interfaces/props";
+import { Stores, StoresContextData } from "../../interfaces/types";
 
-import data from '../../data/data.json';
+import data from '../../data/data.json'
 
-const StoresContext = createContext({} as StoresContextData);
+
+const StoresContext = createContext<StoresContextData>({
+    stores: data.stores,
+});
 
 export function StoresProvider({ children }: StoresProviderProps) {
-  const [stores, setStores] = useState<Stores[]>(data.stores);
+    const [stores, setStores] = useState<Stores[]>(data.stores);
 
-  return (
-    <StoresContext.Provider value={{ stores, setStores }}>
-      {children}
-    </StoresContext.Provider>
-  );
+    return (
+       <StoresContext.Provider value={{ stores }}>
+           {children}
+       </StoresContext.Provider>   
+    )
 }
 
 export const useStores = () => {
-  const context = useContext(StoresContext);
+    const context = useContext(StoresContext);
 
-  return context;
+    return context;
 };

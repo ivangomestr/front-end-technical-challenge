@@ -8,5 +8,4 @@ export interface Stores {
 
 export interface StoresContextData {
     stores: Stores[];
-    setStores: () => void;
 }

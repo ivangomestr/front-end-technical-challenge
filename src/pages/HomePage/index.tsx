@@ -1,10 +1,9 @@
 import styles from './styles.module.scss';
 
-import { BillingFilter } from '../../BillingFilter';
+import { BillingFilter } from '../../components/BillingFilter';
 // import { Search } from '../../components/Search';
 import { StoreTable } from '../../components/StoreTable';
-import { Paginations } from '../../components/Pagination';
-import { Mapsp } from '../../Maps';
+import { Mapsp } from '../../components/Maps';
 
 export function HomePage() {
   return (
@@ -12,7 +11,6 @@ export function HomePage() {
       <div className={styles.storesContainer}>
         {/* <Search /> */}
         <StoreTable />
-        <Paginations />
       </div>
 
       <div className={styles.billingContainer}>

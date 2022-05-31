@@ -1,32 +1,8 @@
 import TextField from '@mui/material/TextField';
-import { useEffect, useState } from 'react';
-import { useStores } from '../hooks/useStores';
 import styles from './styles.module.scss';
+import { SearchProps } from '../../interfaces/props';
 
-export function Search() {
-  const { stores, setStores } = useStores();
-  const [search, setSearch] = useState('');
-
-  const handleSearch = () => {
-    const storesFiltered = stores.filter((store) => {
-      if (search === '') {
-        // if query is empty
-        return store;
-      }
-      if (store.name.toLowerCase().includes(search.toLowerCase())) {
-        // returns filtered array
-        return store;
-      }
-    });
-    
-    console.log(storesFiltered)
-    setStores(storesFiltered);
-  };
-
-  // useEffect(() => {
-  //   handleSearch();
-  // }, [search]);
-
+export function Search({ filter }: SearchProps) {
   return (
     <div className={styles.container}>
       <TextField
@@ -34,7 +10,7 @@ export function Search() {
         label="Pesquisar"
         variant="filled"
         size="small"
-        onChange={setSearch}
+        onChange={(e) => filter(e.target.value)}
       />
     </div>
   );
