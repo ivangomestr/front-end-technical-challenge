@@ -4,6 +4,7 @@ import { BillingFilter } from '../../BillingFilter';
 import { Search } from '../../components/Search';
 import { StoreTable } from '../../components/StoreTable';
 import { Paginations } from '../../components/Pagination';
+import { Mapsp } from '../../Maps';
 
 export function HomePage() {
   return (
@@ -16,6 +17,7 @@ export function HomePage() {
 
       <div className={styles.billingContainer}>
         <BillingFilter />
+        <Mapsp />
       </div>
     </div>
   );
