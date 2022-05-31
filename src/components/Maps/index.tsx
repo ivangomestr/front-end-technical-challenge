@@ -1,10 +1,13 @@
 import GoogleMapReact from 'google-map-react';
+import { useStores } from '../hooks/useStores'; 
 
 function AnyReactComponent({ text }: any) {
   return <div>{text}</div>;
 }
 
 export function Mapsp() {
+  const { stores } = useStores();
+
   const defaultProps = {
     center: {
       lat: 10.99835602,
@@ -21,7 +24,9 @@ export function Mapsp() {
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-        <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
+        {stores.map((store) => (
+          <AnyReactComponent lat={store.latitude} lng={store.longitude} text="My Marker" />
+        ))}
       </GoogleMapReact>
     </div>
   );
