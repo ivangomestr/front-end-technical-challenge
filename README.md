@@ -1,55 +1,59 @@
-# Desafio Técnico de Front-End - Assertiva Soluções
 
-Aqui na Assertiva temos times de desenvolvimento ágeis e com
-foco em fazer as coisas acontecerem. Estamos continuamente buscando
-novas tecnologias que melhor atendam as necessidades de nossos produtos. Uma outra busca constante, principalmente para desenvolvedores front-end, é proporcionar uma melhor experiência de uso para nossos usuários.
+# Projects
 
-O que preparamos é um teste com um pouquinho do que você encontrará no dia-a-dia da squad na Assertiva. O desafio técnico consiste em criar uma SPA para acompanhamento de desempenho de lojas, conforme protótipo e dados disponibilizados. Esse tipo de problema é bastante comum e oferece várias situações que precisamos apresentar as informações tanto em lista quanto em mapa.
 
-## Instruções
+### [Demo](http://same-group-assertiva.surge.sh/)
 
-- Faça um fork desse projeto e ao final do processo nos envie o link do seu fork.
-- Utilize a branch master apenas para publicar versões funcionais seguidas de suas respectivas Tags.
-- Crie e utilize uma branch 'Develop' para realizar todo o desenvolvimento do desafio.
 
-## Desenvolvimento
+### Caracteristicas
+  - React
+  - Typescript
+  - SASS
+  - Context API
+  - Hooks
 
-- Desenvolva um Sistema de build simples para a SPA.
 
-### Requisitos obrigatórios
+### Ambiente para desenvolvimento 
 
-- **Mapa**:​ exibir todas as lojas no mapa. As lojas com faturamento inferior ao mínimo esperado devem estar em vermelho.
-- **Listagem paginada**:​ ao carregar a página, já trazer uma listagem com 10 lojas por página ordenadas pelo nome da loja, seguindo o protótipo. As lojas com faturamento inferior ao configurado no campo “Faturamento mínimo esperado” devem estar em vermelho.
-- **Pesquisa**:​ Filtrar as lojas pelo nome, tanto na lista quanto no mapa, durante a digitação do texto digitado.
-- **Faturamento mínimo esperado**:​ O valor default desse campo é 15.000,00. As alterações neste campo devem refletir na listagem e no mapa.
+| Item | Versão |
+| ------ | ------ |
+| Yarn | 1.22.18 |
+| NPM | 8.3.1 |
+| Node | 16.14.0 |
 
-### Artefatos disponibilizados
 
-- JSON com os dados da aplicação que esta em ```public/data/data.json ```| ou também pode usar o endpoint mock https://run.mocky.io/v3/8c35bbb1-eed6-4eeb-aa83-1132b5830f57 (uso obrigatório)
-- Imagens
-- Fonts
+### Configurando ambiente
 
-### Protótipo
+##### Primeira etapa
+- [NodeJS guia de instalação](https://nodejs.org/en/download/package-manager/ "Instalação")
+- [Homebrew para mac](https://brew.sh/index_pt-br "Instalação")
+- [ReactJs ](https://reactjs.org/docs/create-a-new-react-app.html "Instalação")
+- [Yarn ](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable")
 
-Não é necessário fazer igual o protótipo. ( Surpreenda-nos! 😁)
 
-![Protótipo](/public/prototype/prototipo.png)
+##### Segunda etapa
 
-### Lib's obrigatórias no desenvolvimento
+Configurado o ambiente podemos seguir adiante.
 
-- [Material-UI](https://material-ui.com/)
-- [google-react-map](https://github.com/google-map-react/google-map-react)
-
-Chave da API Google Maps:
-
-```shell
-AIzaSyC6munUy9XhZ5Z5frB4YmnrNvatlZJBytw
+> Baixando o projeto
+```sh
+$ git clone "REPOSITORIO DO PROJETO"
+$ cd "PASTA DO PROJETO"
 ```
 
-### Diferenciais
 
-- Utilização de Pré-Processadores de CSS ([SASS](https://sass-lang.com/) , [LESS](https://lesscss.org/)) ou [styled-components](https://mui.com/pt/system/styled/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- Testes Unitários [Jest](https://jestjs.io/pt-BR/) e [Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- CSS responsivo
+##### Terceira etapa
+> Instalando dependências do projeto e executando o projeto.
+```sh
+$ yarn install
+$ yarn start
+```
+ou
+```sh
+$ npm install
+$ npm start
+```
+
+
+#### Imagens
+![demo](https://user-images.githubusercontent.com/85263053/171418330-1e82d355-2098-4af6-b2df-1ec2e4973ca8.png)
