@@ -11,8 +11,8 @@ export function Search() {
       <TextField
         fullWidth
         label="Pesquisar"
-        variant="filled"
-        size="small"
+        variant="outlined"
+        size="medium"
         onChange={(e) => setSearch(e.target.value)}
       />
     </div>
