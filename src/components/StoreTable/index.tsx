@@ -12,9 +12,6 @@ import Paper from '@mui/material/Paper';
 import { Pagination, Stack } from '@mui/material';
 import styles from './styles.module.scss';
 
-import { Maps } from '../Maps';
-import { BillingFilter } from '../BillingFilter';
-
 import { Search } from '../Search';
 
 export function StoreTable() {
@@ -40,7 +37,7 @@ export function StoreTable() {
     <>
       <Search />
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <Table sx={{ minWidth: 650 }} size="medium" aria-label="a dense table">
           <TableHead>
             <TableRow>
               <TableCell>Loja</TableCell>
@@ -63,9 +60,11 @@ export function StoreTable() {
         </Table>
       </TableContainer>
 
-      <Stack spacing={2}>
-        <Pagination count={totalPages} page={page} onChange={handleChange} />
-      </Stack>
+      <div className={styles.paginationContainer}>
+        <Stack spacing={2}>
+          <Pagination count={totalPages} page={page} onChange={handleChange} />
+        </Stack>
+      </div>
     </>
   );
 }

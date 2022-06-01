@@ -6,7 +6,6 @@ function AnyReactComponent({ text }: any) {
   return <div>{text}</div>;
 }
 
-
 export function Maps() {
   const { stores } = useStores();
 
@@ -18,10 +17,8 @@ export function Maps() {
     zoom: 11,
   };
 
-
   return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div style={{ height: '50vh', width: '86%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyC6munUy9XhZ5Z5frB4YmnrNvatlZJBytw' }}
         defaultCenter={defaultProps.center}

@@ -7,3 +7,8 @@ export interface SearchProps {
 export interface StoresProviderProps {
     children: ReactNode
 }
+
+export interface MapMarkerProps {
+  name: string;
+  revenueSpecial: boolean;
+}

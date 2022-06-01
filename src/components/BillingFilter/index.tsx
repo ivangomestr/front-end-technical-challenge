@@ -11,8 +11,8 @@ export function BillingFilter() {
       <TextField
         fullWidth
         label="Faturamento mínimo esperado"
-        variant="filled"
-        size="small"
+        variant="outlined"
+        size="medium"
         type="number"
         onChange={(e) => setSearch(e.target.value)}
       />
