@@ -8,4 +8,5 @@ export interface Stores {
 
 export interface StoresContextData {
     stores: Stores[];
+    setSearch: (search: string) => void;
 }

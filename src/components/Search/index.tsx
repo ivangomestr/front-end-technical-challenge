@@ -1,8 +1,11 @@
 import TextField from '@mui/material/TextField';
 import styles from './styles.module.scss';
 import { SearchProps } from '../../interfaces/props';
+import { useStores } from '../hooks/useStores';
 
-export function Search({ filter }: SearchProps) {
+export function Search() {
+  const { setSearch } = useStores()
+
   return (
     <div className={styles.container}>
       <TextField
@@ -10,7 +13,7 @@ export function Search({ filter }: SearchProps) {
         label="Pesquisar"
         variant="filled"
         size="small"
-        onChange={(e) => filter(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
       />
     </div>
   );

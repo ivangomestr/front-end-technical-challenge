@@ -1,20 +1,23 @@
 import GoogleMapReact from 'google-map-react';
-import { useStores } from '../hooks/useStores'; 
+import { useStores } from '../hooks/useStores';
+import { MapMarker } from '../MapMarker';
 
 function AnyReactComponent({ text }: any) {
   return <div>{text}</div>;
 }
 
-export function Mapsp() {
+
+export function Maps() {
   const { stores } = useStores();
 
   const defaultProps = {
     center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
+      lat: -23.568767,
+      lng: -46.649907,
     },
     zoom: 11,
   };
+
 
   return (
     // Important! Always set the container height explicitly
@@ -24,8 +27,15 @@ export function Mapsp() {
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-        {stores.map((store) => (
-          <AnyReactComponent lat={store.latitude} lng={store.longitude} text="My Marker" />
+        {stores.map((store: any, index: any) => (
+          <MapMarker
+            key={index}
+            // @ts-ignore
+            lat={store.latitude}
+            lng={store.longitude}
+            revenueSpecial={store.revenue < 15000}
+            name={store.name}
+          />
         ))}
       </GoogleMapReact>
     </div>
