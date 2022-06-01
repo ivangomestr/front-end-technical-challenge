@@ -10,12 +10,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Pagination, Stack } from '@mui/material';
+import styles from './styles.module.scss';
+
+import { Maps } from '../Maps';
+import { BillingFilter } from '../BillingFilter';
 
 import { Search } from '../Search';
 
 export function StoreTable() {
   const { stores } = useStores();
-  const [search, setSearch] = useState('');
 
   const [page, setPage] = useState(1);
 
@@ -24,14 +27,7 @@ export function StoreTable() {
   let totalPages = Math.ceil(stores.length / PER_PAGE);
 
   const _DATA = usePagination({
-    data: stores.filter((store) => {
-      if (search === '') {
-        return store;
-      }
-      if (store.name.toLowerCase().includes(search.toLowerCase())) {
-        return store;
-      }
-    }),
+    data: stores,
     itemsPerPage: PER_PAGE,
   });
 
@@ -42,7 +38,7 @@ export function StoreTable() {
 
   return (
     <>
-      <Search filter={setSearch} />
+      <Search />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>

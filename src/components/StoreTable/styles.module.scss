@@ -1,0 +1,12 @@
+
+
+.container {
+    display: flex;
+
+    .billingContainer {
+        display: flex;
+        flex-direction: column;
+        width: 46rem;
+        height: 40rem;
+    }
+}
